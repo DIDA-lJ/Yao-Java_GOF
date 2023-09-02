@@ -1,4 +1,4 @@
-package singleton;
+package com.qiyao.singleton;
 
 import java.util.concurrent.atomic.AtomicLong;
 

@@ -3,7 +3,7 @@
 
     <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度
     %msg：日志消息，%n是换行符-->
-    <property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${PID:-} [%15.15t] %-40.40logger{39} : %m%n"/>
+    <property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss} [%thread]**************** %-5level %logger{50} - %msg%n"/>
     <!--
     	Appender: 设置日志信息的去向,常用的有以下几个
         ch.qos.logback.core.ConsoleAppender (控制台)

@@ -1,4 +1,6 @@
-package singleton;
+package com.qiyao.singleton;
+
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -11,6 +13,7 @@ import java.io.IOException;
  * @Author LinQi
  * @Date 2023/09/02
  */
+@Slf4j
 public class Logger {
     private String basePath = "D:\\code\\core-project\\Yao-Java_GOF\\src\\main\\resources\\info.log";
     private static Logger instance = new Logger();
@@ -37,4 +40,5 @@ public class Logger {
     public void setBasePath(String basePath){
         this.basePath = basePath;
     }
+
 }
