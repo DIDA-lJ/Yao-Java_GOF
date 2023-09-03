@@ -1,5 +1,7 @@
 package com.qiyao.singleton;
 
+import java.io.Serializable;
+
 /**
  * <p>
  * 简单的懒汉式单例模式线程不安全
@@ -14,7 +16,7 @@ package com.qiyao.singleton;
  * @Author LinQi
  * @Date 2023/09/02
  */
-public class DoubleCheckLockSingleton {
+public class DoubleCheckLockSingleton implements Serializable {
     /**
      * 1.持有一个 JVM 全局唯一的实例
      * 创建对象的时候，由于创建过程不是原子性的操作，所以即使使用了双重检查锁，其在创建过程中是否可能会产生半初始化状态
@@ -27,7 +29,9 @@ public class DoubleCheckLockSingleton {
      * 2.为了避免别人随意地创建，我们需要私有化构造器
      */
     private DoubleCheckLockSingleton() {
-
+        if (instance != null) {
+            throw new RuntimeException("该对象是单例的，无法多次数创建");
+        }
     }
 
     /**
@@ -44,6 +48,9 @@ public class DoubleCheckLockSingleton {
                 }
             }
         }
+        return instance;
+    }
+    public Object readResolve(){
         return instance;
     }
 }

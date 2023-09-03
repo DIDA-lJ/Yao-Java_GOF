@@ -13,7 +13,9 @@ public class GlobalCounter {
     private AtomicLong atomicLong = new AtomicLong();
     private static final GlobalCounter instance = new GlobalCounter();
 
-    // 私有化无常构造器
+    /**
+     * 私有化无参构造器
+     */
     private GlobalCounter() {
 
     }
@@ -22,7 +24,7 @@ public class GlobalCounter {
         return instance;
     }
 
-    public long getId(){
+    public long getId() {
         return atomicLong.incrementAndGet();
     }
 
