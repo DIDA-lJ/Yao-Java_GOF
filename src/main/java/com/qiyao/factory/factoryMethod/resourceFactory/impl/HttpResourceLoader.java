@@ -1,6 +1,6 @@
-package com.qiyao.factory.factoryMethod.impl;
+package com.qiyao.factory.factoryMethod.resourceFactory.impl;
 
-import com.qiyao.factory.factoryMethod.IResourceLoader;
+import com.qiyao.factory.factoryMethod.resourceFactory.IResourceLoader;
 import com.qiyao.factory.simpleFactory.Resource;
 
 /**

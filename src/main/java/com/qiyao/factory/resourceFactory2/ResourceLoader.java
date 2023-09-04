@@ -1,7 +1,8 @@
-package com.qiyao.factory.factoryMethod;
+package com.qiyao.factory.resourceFactory2;
 
 import com.qiyao.factory.exceptions.ResourceLoadException;
-import com.qiyao.factory.simpleFactory.Resource;
+import com.qiyao.factory.resourceFactory2.product.AbstractResource;
+import com.qiyao.factory.resourceFactory2.resourceFactory.IResourceLoader;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,7 +11,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import static com.qiyao.factory.simpleFactory.ResourceConstant.*;
+import static com.qiyao.factory.resourceFactory2.resourceFactory.ResourceConstant.COLON;
+
 
 /**
  * @ClassName ResourceLoader
@@ -46,7 +48,7 @@ public class ResourceLoader {
      */
     static {
         InputStream inputStream = Thread.currentThread().getContextClassLoader()
-                .getResourceAsStream("resourceLoader.properties");
+                .getResourceAsStream("resourceLoader2.properties");
         Properties properties = new Properties();
 
         try {
@@ -74,7 +76,7 @@ public class ResourceLoader {
      * @param url file:// http:// classpath:// ftp://
      * @return 实际的资源类
      */
-    public Resource load(String url) {
+    public AbstractResource load(String url) {
         // 1.需要根据 url 获取前缀
         String prefix = getPrefix(url);
 

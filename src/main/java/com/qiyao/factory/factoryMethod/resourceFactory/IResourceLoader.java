@@ -1,4 +1,4 @@
-package com.qiyao.factory.factoryMethod;
+package com.qiyao.factory.factoryMethod.resourceFactory;
 
 import com.qiyao.factory.simpleFactory.Resource;
 

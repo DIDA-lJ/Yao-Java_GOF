@@ -1,11 +1,12 @@
-package com.qiyao.factory.factoryMethod.impl;
+package com.qiyao.factory.resourceFactory2.resourceFactory.impl;
 
-import com.qiyao.factory.factoryMethod.IResourceLoader;
+import com.qiyao.factory.factoryMethod.resourceFactory.IResourceLoader;
+import com.qiyao.factory.resourceFactory2.product.impl.FtpResource;
 import com.qiyao.factory.simpleFactory.Resource;
 
 /**
  * @ClassName HttpResourceLoader
- * @Description FtpPathResourceLoader 资源加载器
+ * @Description Ftp 资源加载器
  * @Version 1.0.0
  * @Author LinQi
  * @Date 2023/09/03
